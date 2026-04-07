@@ -1,0 +1,341 @@
+
+/* ── Variables ── */
+#gbp-section {
+    --gbp-blue: #1565C0;
+    --gbp-blue-sky: #BBDEFB;
+    --gbp-blue-dark: #0D47A1;
+    --gbp-black: #111111;
+    --gbp-white: #FFFFFF;
+    --gbp-text-dark: #333333;
+    --gbp-text-muted: rgba(255, 255, 255, 0.82);
+
+    --gbp-font-fraktur: 'UnifrakturMaguntia', cursive;
+    --gbp-font-serif: 'Libre Baskerville', Georgia, serif;
+    --gbp-font-heading: 'Oswald', Arial, sans-serif;
+    --gbp-font-body: 'Lato', Arial, sans-serif;
+
+    --gbp-radius-card: 16px;
+}
+
+/* ── Reset & Section Root ── */
+#gbp-section *,
+#gbp-section *::before,
+#gbp-section *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#gbp-section {
+    background-color: var(--gbp-blue);
+    font-family: var(--gbp-font-body);
+    color: var(--gbp-white);
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#gbp-section a {
+    text-decoration: none;
+}
+
+/* ── Header ── */
+#gbp-section .gbp-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+#gbp-section .gbp-header__title {
+    font-family: var(--gbp-font-heading);
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+#gbp-section .gbp-header__logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+#gbp-section .gbp-logo-bp__text {
+    font-family: var(--gbp-font-fraktur);
+    font-size: 1.8rem;
+}
+
+#gbp-section .gbp-header__divider {
+    width: 200px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.4);
+    margin: 4px 0;
+}
+
+#gbp-section .gbp-logo-wsj {
+    font-family: var(--gbp-font-serif);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   PROMO ROW (Phone + Cards) - จัดกึ่งกลางสมบูรณ์แบบ
+   ============================================================ */
+#gbp-section .gbp-promo-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* จัดกลางแนวนอน */
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: 50px;
+}
+
+/* ── Phone Mockup (แก้ปัญหาการซ้อน) ── */
+#gbp-section .gbp-phone-col {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+#gbp-section .gbp-phone {
+    /* width: 408px; */
+    height: 666px;
+
+    overflow: hidden;
+}
+
+#gbp-section .gbp-phone__screen-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 32px;
+}
+
+/* ── Subscription Cards ── */
+#gbp-section .gbp-cards-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 580px;
+}
+
+#gbp-section .gbp-card {
+    display: flex;
+    align-items: center;
+    padding: 24px 30px;
+    border-radius: var(--gbp-radius-card);
+    gap: 25px;
+    width: 100%;
+    min-height: 198px;
+    transition: transform 0.3s ease;
+}
+
+#gbp-section .gbp-card:hover {
+    transform: translateX(8px);
+}
+
+#gbp-section .gbp-card--white {
+    background: var(--gbp-white);
+}
+
+#gbp-section .gbp-card--sky {
+    background: var(--gbp-blue-sky);
+}
+
+#gbp-section .gbp-card--black {
+    background: var(--gbp-black);
+}
+
+#gbp-section .gbp-card__num {
+    font-family: var(--gbp-font-heading);
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 1;
+    width: 110px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+#gbp-section .gbp-card__num--on-white {
+    color: var(--gbp-blue);
+}
+
+#gbp-section .gbp-card__num--on-sky {
+    color: var(--gbp-blue-dark);
+    opacity: 0.8;
+}
+
+#gbp-section .gbp-card__num--on-black {
+    color: var(--gbp-white);
+}
+
+#gbp-section .gbp-card__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+#gbp-section .gbp-card__text {
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+#gbp-section .gbp-card__text--dark {
+    color: var(--gbp-text-dark);
+}
+
+#gbp-section .gbp-card__text--light {
+    color: var(--gbp-white);
+}
+
+/* ── Buttons ── */
+#gbp-section .gbp-btn {
+    display: inline-block;
+    padding: 10px 28px;
+    border-radius: 6px;
+    font-family: var(--gbp-font-body);
+    font-weight: 900;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+#gbp-section .gbp-btn--solid {
+    background: var(--gbp-blue);
+    color: var(--gbp-white);
+}
+
+#gbp-section .gbp-card--black .gbp-btn--solid {
+    background: var(--gbp-white);
+    color: var(--gbp-black);
+}
+
+/* ============================================================
+   GIFT VOUCHER ROW
+   ============================================================ */
+#gbp-section .gbp-gift-row {
+    width: 100%;
+    max-width: 1100px;
+    /* border: 1px solid rgba(255, 255, 255, 0.35); */
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    /* background: rgba(255, 255, 255, 0.03); */
+}
+
+#gbp-section .gbp-gift-text {
+    flex: 1;
+    text-align: center;
+}
+
+#gbp-section .gbp-gift-text__title {
+    font-family: var(--gbp-font-heading);
+    font-size: 2.2rem;
+    margin: 10px 0;
+    letter-spacing: 0.05em;
+}
+
+#gbp-section .gbp-gift-img-circle {
+    width: 220px;
+    height: 220px;
+    background: #f8faff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+#gbp-section .gbp-footnote {
+    margin-top: 20px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: start;
+}
+
+/* ============================================================
+   RESPONSIVE (รองรับโทรศัพท์และแท็บเล็ต)
+   ============================================================ */
+
+/* สำหรับแท็บเล็ตและหน้าจอขนาดกลาง */
+@media (max-width: 992px) {
+    #gbp-section .gbp-promo-row {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    #gbp-section .gbp-phone {
+        width: 250px;
+        height: 520px;
+    }
+
+    #gbp-section .gbp-gift-row {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    #gbp-section .gbp-gift-img-circle {
+        order: -1;
+        /* เอารูปขึ้นก่อนในแนวตั้ง */
+    }
+}
+
+/* สำหรับมือถือ */
+@media (max-width: 480px) {
+    #gbp-section {
+        padding: 40px 15px;
+    }
+
+    #gbp-section .gbp-phone {
+        width: 210px;
+        height: 430px;
+        border-radius: 30px;
+        padding: 10px;
+    }
+
+    #gbp-section .gbp-phone__screen-img {
+        border-radius: 22px;
+    }
+
+    #gbp-section .gbp-card {
+        padding: 20px 15px;
+        gap: 15px;
+        min-height: auto;
+    }
+
+    #gbp-section .gbp-card__num {
+        font-size: 3.2rem;
+        width: 60px;
+    }
+
+    #gbp-section .gbp-card__text {
+        font-size: 0.9rem;
+    }
+
+    #gbp-section .gbp-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    #gbp-section .gbp-gift-text__title {
+        font-size: 1.5rem;
+    }
+
+    #gbp-section .gbp-gift-img-circle {
+        width: 170px;
+        height: 170px;
+    }
+}
+

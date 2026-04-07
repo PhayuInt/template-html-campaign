@@ -1,0 +1,363 @@
+/* ─── CSS VARIABLES ─────────────────────────────────────── */
+:root {
+    --dn-bg: #f0f0f0;
+    --dn-white: #ffffff;
+    --dn-blue-main: #1a5fb4;
+    --dn-blue-dark: #0d3d7c;
+    --dn-blue-nav: #003087;
+    --dn-text-dark: #1a1a1a;
+    --dn-text-mid: #333333;
+    --dn-text-light: #555555;
+    --dn-border: #d0d0d0;
+    --dn-tab-line: #1a5fb4;
+    --dn-footer-bg: #1e2d4e;
+    --dn-footer-text: #ffffff;
+    --dn-btn-bg: #1a1a1a;
+    --dn-btn-text: #ffffff;
+    --dn-font-head: 'Playfair Display', Georgia, serif;
+    --dn-font-body: 'Source Sans 3', Arial, sans-serif;
+}
+
+/* ─── RESET ─────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--dn-font-body);
+    background: var(--dn-bg);
+    color: var(--dn-text-dark);
+}
+
+/* ─── DONATION SECTION ──────────────────────────────────── */
+#dn-section {
+    background: var(--dn-bg);
+    padding: 60px 20px 70px;
+    text-align: center;
+}
+
+#dn-headline {
+    font-family: var(--dn-font-head);
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: var(--dn-text-dark);
+    margin-bottom: 16px;
+}
+
+#dn-subtext {
+    font-size: 16px;
+    color: var(--dn-text-mid);
+    line-height: 1.6;
+    margin-bottom: 36px;
+}
+
+/* ─── TABS ─────────────────────────────────────────────── */
+#dn-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    border-bottom: 2px solid var(--dn-border);
+    max-width: 520px;
+    margin: 0 auto 36px;
+}
+
+.dn-tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 12px 24px;
+    font-family: var(--dn-font-body);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dn-blue-main);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+
+.dn-tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--dn-tab-line);
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+}
+
+.dn-tab-btn.dn-tab-active::after {
+    transform: scaleX(1);
+}
+
+.dn-tab-btn.dn-tab-active {
+    color: var(--dn-blue-main);
+}
+
+/* ─── TAB PANELS ───────────────────────────────────────── */
+.dn-panel {
+    display: none;
+}
+
+.dn-panel.dn-panel-active {
+    display: block;
+}
+
+/* ─── CARD ROW ─────────────────────────────────────────── */
+.dn-card-row {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    max-width: 700px;
+    margin: 0 auto 36px;
+}
+
+/* ─── BANK CARD ────────────────────────────────────────── */
+.dn-bank-card {
+    background: var(--dn-white);
+    border: 1px solid var(--dn-border);
+    border-radius: 8px;
+    padding: 30px 28px;
+    min-width: 210px;
+    flex: 1 1 200px;
+    max-width: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.dn-bank-logo {
+    width: 64px;
+    height: 64px;
+    background: var(--dn-blue-main);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+}
+
+.dn-bank-logo svg {
+    width: 36px;
+    height: 36px;
+    fill: #ffffff;
+}
+
+.dn-bank-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dn-text-dark);
+}
+
+.dn-bank-branch {
+    font-size: 14px;
+    color: var(--dn-text-light);
+}
+
+.dn-bank-label {
+    font-size: 14px;
+    color: var(--dn-text-light);
+    margin-top: 4px;
+}
+
+.dn-bank-accno {
+    font-size: 26px;
+    font-weight: 700;
+    /* letter-spacing: 0.06em; */
+    color: var(--dn-text-dark);
+}
+
+.dn-copy-btn {
+    display: inline-block;
+    background: var(--dn-btn-bg);
+    color: var(--dn-btn-text);
+    border: none;
+    border-radius: 4px;
+    padding: 8px 28px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.dn-copy-btn:hover {
+    background: #333;
+}
+
+.dn-copy-btn:active {
+    transform: scale(0.97);
+}
+
+/* ─── QR CARD ──────────────────────────────────────────── */
+.dn-qr-card {
+    background: var(--dn-white);
+    border: 1px solid var(--dn-border);
+    border-radius: 8px;
+    padding: 22px 20px 18px;
+    min-width: 210px;
+    flex: 1 1 200px;
+    max-width: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.dn-qr-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.dn-qr-placeholder {
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border: 2px solid #000;
+    display: grid;
+    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(21, 1fr);
+    overflow: hidden;
+    position: relative;
+}
+
+.dn-qr-caption {
+    font-size: 11px;
+    color: var(--dn-text-light);
+    text-align: center;
+    line-height: 1.4;
+}
+
+.dn-qr-caption strong {
+    display: block;
+    font-size: 12px;
+    color: var(--dn-text-dark);
+    letter-spacing: 0.02em;
+}
+
+.dn-qr-footer-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 10px;
+    color: var(--dn-text-light);
+    border-top: 1px solid var(--dn-border);
+    padding-top: 6px;
+    margin-top: 2px;
+}
+
+/* ─── FAX LINE ─────────────────────────────────────────── */
+#dn-fax-line,
+#dn-fax-line-phf {
+    font-size: 14px;
+    color: var(--dn-text-mid);
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ─── FOOTER ───────────────────────────────────────────── */
+#dn-footer {
+    background: var(--dn-footer-bg);
+    color: var(--dn-footer-text);
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+}
+
+#dn-footer-copy {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.dn-footer-contact {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.dn-footer-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+}
+
+.dn-footer-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dn-footer-icon svg {
+    width: 15px;
+    height: 15px;
+    fill: #fff;
+}
+
+/* ─── TOAST ────────────────────────────────────────────── */
+#dn-toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(60px);
+    background: #1a1a1a;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+    z-index: 999;
+}
+
+#dn-toast.dn-toast-show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ─── RESPONSIVE ───────────────────────────────────────── */
+@media (max-width: 520px) {
+    .dn-card-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dn-bank-card,
+    .dn-qr-card {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    #dn-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dn-footer-contact {
+        justify-content: center;
+    }
+}
