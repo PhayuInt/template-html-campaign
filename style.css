@@ -1637,6 +1637,7 @@ h2 {
     color: #fff;
     text-transform: uppercase;
     margin-bottom: 4px;
+    text-align: left;
 }
 
 .bp-hero__text h2 {
@@ -1647,6 +1648,7 @@ h2 {
     margin-bottom: 12px;
     color: #fff;
     text-transform: uppercase;
+    text-align: left;
 }
 
 .bp-hero__list {
